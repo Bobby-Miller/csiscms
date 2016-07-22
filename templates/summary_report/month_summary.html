@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="container">
+        <div class="row">
+            <div class="jumbotron">
+                <h1>CSIS Segments - {{ month }} / {{ year }}</h1>
+                <h2>
+                {% if batches %}
+                <ul>
+                    {% for batch in batches %}
+                        <li><a href="/batch/{{ batch.batch_id }}">{{ batch.batch_id }}</a></li>
+                    {% endfor %}
+                </ul>
+                {% else %}
+                <p>No reports are available.</p>
+                {% endif %}
+                </h2>
+            </div>
+        </div>
+    </div>
+{% endblock %}
