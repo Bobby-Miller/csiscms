@@ -130,6 +130,7 @@ STATICFILES_DIRS = (
     os.path.join(BASE_DIR, "static"),
     # '/var/www/static/',
 )
+STATIC_ROOT = '/var/www/static/'
 
 LOGIN_URL = '/login/'
 LOGIN_REDIRECT_URL = '/' # It means home view
