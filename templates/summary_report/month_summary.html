@@ -4,7 +4,8 @@
     <div class="container">
         <div class="row">
             <div class="jumbotron">
-                <h1>CSIS Segments - {{ month }} / {{ year }}</h1>
+                <h1>CSIS Lots - {{ month }} / {{ year }}</h1>
+            </div>
                 <h2>
                 {% if batches %}
                 <ul>
@@ -16,7 +17,6 @@
                 <p>No reports are available.</p>
                 {% endif %}
                 </h2>
-            </div>
         </div>
     </div>
 {% endblock %}

@@ -16,11 +16,11 @@ urlpatterns = [
         name='batch_summary',
         ),
     url(
-        r'^stats/(?P<category>[A-Za-z\-]+)/(?P<batch>[A-Za-z0-9]+)/(?P<segment>[0-9]+)/$',
+        r'^stats/(?P<category>[A-Za-z\-_]+)/(?P<batch>[A-Za-z0-9]+)/(?P<segment>[0-9]+)/$',
         views.stats,
         name='stats_report',
     ),
-    url(r'^stats/(?P<category>[A-Za-z\-]+)/(?P<batch>[A-Za-z0-9]+)/$',
+    url(r'^stats/(?P<category>[A-Za-z\-_]+)/(?P<batch>[A-Za-z0-9]+)/$',
         views.stats,
         kwargs={'segment': None},
         name='total_stats_report',

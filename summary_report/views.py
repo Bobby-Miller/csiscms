@@ -174,9 +174,11 @@ def stats(request, category, batch, segment):
 
     # Because we don't factor out non-zero values for tests, the count is easier to gather.
     tests_count_sum = 0
+    summary_id = None
     for instance in tests_instances:
         # Get the count from the summary value
         tests_count_sum += getattr(instance.summary, weight_map[instance.overall_result])
+        summary_id = instance.summary
 
     # Normalize the tests averages
     tests_dict = {field: 0 for field in test_fields}
@@ -313,7 +315,6 @@ def stats(request, category, batch, segment):
         'dimension_bump_max',
         'dimension_chip_max',
         'dimension_nose_min_max',
-        'dimension_median_od',
         'dimension_length_mm',
     ]
 
@@ -410,8 +411,25 @@ def stats(request, category, batch, segment):
                         'tests_values': cosmetic_tests_values,
                         }
 
+    category_display_map = {
+        'inspected': 'All Sensors',
+        'good': 'Good',
+        'fail': 'Failed (General)',
+        'fail_od': 'Failed (OD)',
+        'fail_backward': 'Failed (Backwards)',
+        'fail_na': 'Sensors Not Found/Not Valid',
+    }
+    display_category = category_display_map[category]
+
+    # Rename segment if segment is None (which happens for job total reports)
+    segment = 'Job Total' if not segment else summary_id
+
     return render(request, 'summary_report/report.html', {'round': round_context,
                                                           'flat': flat_context,
                                                           'dimension': dimension_context,
                                                           'cosmetic': cosmetic_context,
+                                                          'batch': batch,
+                                                          'segment': segment,
+                                                          'category': display_category,
+                                                          'count': tests_count_sum,
                                                           })

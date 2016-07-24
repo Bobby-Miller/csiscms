@@ -4,7 +4,8 @@
     <div class="container">
         <div class="row">
             <div class="jumbotron">
-                <h1>CSIS Segment Reports - {{ year|date:"Y" }}</h1>
+                <h1>CSIS Lots Ran - {{ year|date:"Y" }}</h1>
+            </div>
                 <h2>
                     {% if date_list %}
                     <ul>
@@ -16,7 +17,6 @@
                     <p>No reports are available.</p>
                     {% endif %}
                 </h2>
-            </div>
         </div>
     </div>
 {% endblock %}
