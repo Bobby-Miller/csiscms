@@ -140,12 +140,15 @@ LOGIN_REDIRECT_URL = '/' # It means home view
 
 SECURE_CONTENT_TYPE_NOSNIFF = True
 SECURE_BROWSER_XSS_FILTER = True
-SECURE_SSL_REDIRECT = True
+SECURE_SSL_REDIRECT = False
 SESSION_COOKIE_SECURE = True
 CSRF_COOKIE_SECURE = True
 CSRF_COOKIE_HTTPONLY = True
 X_FRAME_OPTIONS = 'DENY'
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+# Read on Django that modifying this attribute without knowing what you're doing can be
+# worse than not adding the attribute. Removing until I understand more.
+SECURE_PROXY_SSL_HEADER = None
 
 ALLOWED_HOSTS = ['*']
 

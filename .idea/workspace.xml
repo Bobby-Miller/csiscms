@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6eb20dec-4b49-4ece-9c24-82ec6f30b382" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/zircoa_csis/settings.py" afterPath="$PROJECT_DIR$/zircoa_csis/settings.py" />
     </list>
     <ignored path="zircoa_csis.iws" />
@@ -135,8 +136,8 @@
           <file leaf-file-name="settings.py" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/zircoa_csis/settings.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="255">
-                  <caret line="132" column="41" selection-start-line="132" selection-start-column="41" selection-end-line="132" selection-end-column="41" />
+                <state relative-caret-position="408">
+                  <caret line="150" column="30" selection-start-line="150" selection-start-column="30" selection-end-line="150" selection-end-column="30" />
                   <folding>
                     <element signature="e#312#321#0" expanded="true" />
                   </folding>
@@ -1186,8 +1187,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/zircoa_csis/settings.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="132" column="41" selection-start-line="132" selection-start-column="41" selection-end-line="132" selection-end-column="41" />
+        <state relative-caret-position="408">
+          <caret line="150" column="30" selection-start-line="150" selection-start-column="30" selection-end-line="150" selection-end-column="30" />
           <folding>
             <element signature="e#312#321#0" expanded="true" />
           </folding>
