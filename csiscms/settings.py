@@ -93,7 +93,7 @@ USE_MODELTRANSLATION = False
 
 # Hosts/domain names that are valid for this site; required if DEBUG is False
 # See https://docs.djangoproject.com/en/dev/ref/settings/#allowed-hosts
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 # Local time zone for this installation. Choices can be found here:
 # http://en.wikipedia.org/wiki/List_of_tz_zones_by_name
@@ -235,6 +235,7 @@ if DJANGO_VERSION < (1, 9):
 INSTALLED_APPS = (
     "custom",
     "summary_report",
+    "storages",
     "mezzanine.accounts",
     "django.contrib.admin",
     "django.contrib.auth",
@@ -306,7 +307,41 @@ OPTIONAL_APPS = (
 ACCOUNTS_PROFILE_MODEL = "custom.MyProfile"
 ACCOUNTS_APPROVAL_REQUIRED = True
 
-SECRET_KEY = "+i5en-=%dm&5ws8q&3yb1qa4ja0opc6-no1j_5-q$v^jn+d7_r"
+##################
+# DJANGO         #
+##################
+SECRET_KEY = os.environ.get('SECRET_KEY')
+NEVERCACHE_KEY = os.environ.get('NEVERCACHE_KEY')
+
+###################
+# S3 STATIC FILES #
+###################
+
+AWS_QUERYSTRING_AUTH = False
+AWS_ACCESS_KEY_ID = os.environ.get('AWS_ACCESS_KEY_ID')
+AWS_SECRET_ACCESS_KEY = os.environ.get('AWS_SECRET_ACCESS_KEY')
+AWS_STORAGE_BUCKET_NAME = 'zircoa-csis'
+AWS_PRELOAD_METADATA = True  # helps collectstatic do updates
+
+STATICFILES_STORAGE = 'storages.backends.s3boto.S3BotoStorage'
+DEFAULT_FILE_STORAGE = 'storages.backends.s3boto.S3BotoStorage'
+
+STATIC_URL = 'https://' + AWS_STORAGE_BUCKET_NAME + '.s3.amazonaws.com/'
+ADMIN_MEDIA_PREFIX = STATIC_URL + 'grappelli/'
+
+MEDIA_URL = 'https://' + AWS_STORAGE_BUCKET_NAME + '.s3.amazonaws.com/'
+
+##################
+# MAIL SETTINGS #
+##################
+
+# Easy setup with sendgrid.com or similar service
+EMAIL_HOST_USER = os.environ.get('EMAIL_HOST_USER')
+EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_HOST_PASSWORD')
+EMAIL_HOST= "smtp.zircoa-csis.herokuapp.com"
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+
 ##################
 # LOCAL SETTINGS #
 ##################
@@ -328,6 +363,11 @@ if os.path.exists(f):
     module.__file__ = f
     sys.modules[module_name] = module
     exec(open(f, "rb").read())
+
+DEFAULT_FILE_STORAGE = 'libs.storages.S3Storage.S3Storage'
+AWS_ACCESS_KEY_ID = 'AKIAIVY6MA3X6NZPQUGQ'
+AWS_SECRET_ACCESS_KEY = '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'
+AWS_STORAGE_BUCKET_NAME = 'zircoa-csis'
 
 
 ####################
