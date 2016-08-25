@@ -306,6 +306,7 @@ OPTIONAL_APPS = (
 ACCOUNTS_PROFILE_MODEL = "custom.MyProfile"
 ACCOUNTS_APPROVAL_REQUIRED = True
 
+SECRET_KEY = "+i5en-=%dm&5ws8q&3yb1qa4ja0opc6-no1j_5-q$v^jn+d7_r"
 ##################
 # LOCAL SETTINGS #
 ##################
