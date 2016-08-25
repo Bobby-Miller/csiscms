@@ -8,7 +8,7 @@
                     {% if date_list %}
                     <ul>
                         {% for date in date_list %}
-                            <li><a href="/{{ year|date:"Y" }}/{{ date|date:"m" }}">{{ date|date:"M" }}</a></li>
+                            <li><a href="{% url 'month_report_list' year=year|date:"Y" month=date|date:"m" %}">{{ date|date:"M" }}</a></li>
                         {% endfor %}
                     </ul>
                     {% else %}
