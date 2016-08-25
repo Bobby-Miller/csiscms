@@ -8,7 +8,7 @@
                 {% if batches %}
                 <ul>
                     {% for batch in batches %}
-                        <li><a href="/batch/{{ batch.batch_id }}">{{ batch.batch_id }}</a></li>
+                        <li><a href="{% url 'batch_summary' batch=batch.batch_id %}">{{ batch.batch_id }}</a></li>
                     {% endfor %}
                 </ul>
                 {% else %}
