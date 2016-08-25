@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block main %}
+    <div class="container">
+        <div class="row">
+                <h1>CSIS Lots - {{ month }} / {{ year }}</h1>
+                <h2>
+                {% if batches %}
+                <ul>
+                    {% for batch in batches %}
+                        <li><a href="/batch/{{ batch.batch_id }}">{{ batch.batch_id }}</a></li>
+                    {% endfor %}
+                </ul>
+                {% else %}
+                <p>No reports are available.</p>
+                {% endif %}
+                </h2>
+        </div>
+    </div>
+{% endblock %}

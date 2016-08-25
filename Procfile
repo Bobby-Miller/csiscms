@@ -1,1 +1,1 @@
-web: gunicorn zircoa_csis.wsgi
+web: gunicorn csiscms.wsgi

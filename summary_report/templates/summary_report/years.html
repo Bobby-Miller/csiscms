@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block main %}
+                <h1>CSIS Lots Ran - Years</h1>
+            <h2>
+                {% if distinct_years %}
+                <ul>
+                    {% for year in distinct_years %}
+                        <li><a href="/{{ year }}">{{ year }}</a></li>
+                    {% endfor %}
+                </ul>
+                {% else %}
+                <p>No reports are available.</p>
+                {% endif %}
+            </h2>
+{% endblock %}
