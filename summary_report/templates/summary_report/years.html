@@ -6,7 +6,7 @@
                 {% if distinct_years %}
                 <ul>
                     {% for year in distinct_years %}
-                        <li><a href="{% url 'summary_report.views.ReportYearArchiveView' year=year %}">
+                        <li><a href="{% url 'report_year_archive' year=year %}">
                             {{ year }}
                         </a></li>
                     {% endfor %}
