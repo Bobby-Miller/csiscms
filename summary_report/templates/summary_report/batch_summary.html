@@ -12,7 +12,7 @@
                             <tr>
                                 <th></th>
                                 <th class="text-center">
-                                    <a href="/stats/inspected/{{ batch }}">Inspected</a>
+                                    <a href="{% url 'total_stats_report' category='inspected' batch=batch %}">Inspected</a>
                                 </th>
                                 <th class="text-center">
                                     <a href="/stats/good/{{ batch }}">Good</a>
