@@ -15,19 +15,19 @@
                                     <a href="{% url 'total_stats_report' category='inspected' batch=batch %}">Inspected</a>
                                 </th>
                                 <th class="text-center">
-                                    <a href="/stats/good/{{ batch }}">Good</a>
+                                    <a href="{% url 'total_stats_report' category='good' batch=batch %}">Good</a>
                                 </th>
                                 <th class="text-center">
-                                    <a href="/stats/fail/{{ batch }}">Fail (General)</a>
+                                    <a href="{% url 'total_stats_report' category='fail' batch=batch %}">Fail (General)</a>
                                 </th>
                                 <th class="text-center">
-                                    <a href="/stats/fail_od/{{ batch }}">Fail (OD)</a>
+                                    <a href="{% url 'total_stats_report' category='fail_od' batch=batch %}">Fail (OD)</a>
                                 </th>
                                 <th class="text-center">
-                                    <a href="/stats/fail_backward/{{ batch }}">Fail (Backwards)</a>
+                                    <a href="{% url 'total_stats_report' category='fail_backward' batch=batch %}">Fail (Backwards)</a>
                                 </th>
                                 <th class="text-center">
-                                    <a href="/stats/fail_na/{{ batch }}">Fail (N/A)</a>
+                                    <a href="{% url 'total_stats_report' category='fail_na' batch=batch %}">Fail (N/A)</a>
                                 </th>
                             </tr>
                             </thead>
@@ -75,27 +75,27 @@
                             <tr>
                                 <th></th>
                                 <th class="text-center">
-                                    <a href="/stats/inspected/{{ batch }}/{{ summary.id }}">
+                                    <a href="{% url 'stats_report' category='inspected' batch=batch segment=summary.id %}">
                                         Inspected</a>
                                 </th>
                                 <th class="text-center">
-                                    <a href="/stats/good/{{ batch }}/{{ summary.id }}">
+                                    <a href="{% url 'stats_report' category='good' batch=batch segment=summary.id %}">
                                         Good</a>
                                 </th>
                                 <th class="text-center">
-                                    <a href="/stats/fail/{{ batch }}/{{ summary.id }}">
+                                    <a href="{% url 'stats_report' category='fail' batch=batch segment=summary.id %}">
                                         Fail (General)</a>
                                 </th>
                                 <th class="text-center">
-                                    <a href="/stats/fail_od/{{ batch }}/{{ summary.id }}">
+                                    <a href="{% url 'stats_report' category='fail_od' batch=batch segment=summary.id %}">
                                         Fail (OD)</a>
                                 </th>
                                 <th class="text-center">
-                                    <a href="/stats/fail_backward/{{ batch }}/{{ summary.id }}">
+                                    <a href="{% url 'stats_report' category='fail_backward' batch=batch segment=summary.id %}">
                                         Fail (Backwards)</a>
                                 </th>
                                 <th class="text-center">
-                                    <a href="/stats/fail_na/{{ batch }}/{{ summary.id }}">
+                                    <a href="{% url 'stats_report' category='fail_na' batch=batch segment=summary.id %}">
                                         Fail (N/A)</a>
                                 </th>
                             </tr>
