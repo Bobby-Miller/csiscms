@@ -91,6 +91,7 @@ class BatchSummaryView(generic.ListView):
         return super(BatchSummaryView, self).dispatch(*args, **kwargs)
 
 
+@login_required
 def stats(request, category, batch, segment):
     # filters is used to map url category to django object query: {category: filter_kwargs}
     filters = {

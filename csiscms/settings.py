@@ -57,7 +57,7 @@ import dj_database_url
 # args and a dictionary of keyword args, to use when creating the
 # field instance. When specifying the field class, the path
 # ``django.models.db.`` can be omitted for regular Django model fields.
-#
+
 # EXTRA_MODEL_FIELDS = (
 #     (
 #         # Dotted path to field.
@@ -370,6 +370,7 @@ AWS_ACCESS_KEY_ID = 'AKIAIVY6MA3X6NZPQUGQ'
 AWS_SECRET_ACCESS_KEY = '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'
 AWS_STORAGE_BUCKET_NAME = 'zircoa-csis'
 
+PAGES_PUBLISHED_INCLUDE_LOGIN_REQUIRED = True
 
 ####################
 # DYNAMIC SETTINGS #

@@ -78,7 +78,7 @@ urlpatterns += [
     # from it, and use them directly below instead of using
     # ``mezzanine.urls``.
 
-    url("^training/", include("mezzanine.blog.urls")),
+    url("^training/", include("train.urls")),
     url("^", include("mezzanine.urls")),
 
     # MOUNTING MEZZANINE UNDER A PREFIX
