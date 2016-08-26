@@ -65,10 +65,12 @@
                             </tr>
                             </tbody>
                           </table>
-                    </table>
+                        </div>
+        </div>
                     <hr>
                     {% for summary in summary_data %}
                     <h3>{{ summary.date }} - {{ summary.time }}</h3>
+        <div class="row">
                         <div class="table-responsive">
                           <table class="table table-bordered">
                             <thead>
@@ -132,12 +134,12 @@
                             </tr>
                             </tbody>
                           </table>
+                        </div>
+        </div>
+    </div>
                     {% endfor %}
 
                 {% else %}
                 <h2></h2><p>The report is not available.</p></h2>
                 {% endif %}
-            </div>
-        </div>
-    </div>
 {% endblock %}
