@@ -1,7 +1,6 @@
 {% extends 'base.html' %}
 
 {% block main %}
-    <div class="container">
         <div class="row">
                 <h1>Lot & Segments Summary - {{ batch }}</h1>
                 {% if summary_data %}
@@ -137,7 +136,6 @@
                         </div>
         </div>
                     {% endfor %}
-    </div>
                 {% else %}
                 <h2></h2><p>The report is not available.</p></h2>
                 {% endif %}
