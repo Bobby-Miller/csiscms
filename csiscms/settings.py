@@ -77,7 +77,7 @@ import dj_database_url
 #         {"blank": True, "default": 1},
 #     ),
 # )
-
+RICHTEXT_FILTER_LEVEL = 3
 # Setting to turn on featured images for blog posts. Defaults to False.
 #
 # BLOG_USE_FEATURED_IMAGE = True
