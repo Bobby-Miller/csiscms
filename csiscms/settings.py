@@ -237,6 +237,7 @@ INSTALLED_APPS = (
     "summary_report",
     "storages",
     "train",
+    "doc_control",
     "mezzanine.accounts",
     "django.contrib.admin",
     "django.contrib.auth",

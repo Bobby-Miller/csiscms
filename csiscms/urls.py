@@ -77,7 +77,7 @@ urlpatterns += [
     # ``mezzanine.urls``, go right ahead and take the parts you want
     # from it, and use them directly below instead of using
     # ``mezzanine.urls``.
-
+    url("^docs/", include("doc_control.urls")),
     url("^training/", include("train.urls")),
     url("^", include("mezzanine.urls")),
 
